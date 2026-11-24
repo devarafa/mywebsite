@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=https://github.com/devarafa/Portfolio">
+
+    <title>Portfolio Updated</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: #0b0d12;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 50px 30px;
+            background: #141720;
+            border: 1px solid #252b38;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: rgba(59, 130, 246, 0.12);
+            color: #60a5fa;
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 27px;
+            margin-bottom: 16px;
+            letter-spacing: -0.8px;
+        }
+
+        .description {
+            color: #9ca3af;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .countdown {
+            margin: 35px auto 20px;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            color: #60a5fa;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .redirect-text {
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        .footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #252b38;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 22px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="icon">↗</div>
+
+        <h1>My Portfolio Has Moved!</h1>
+
+        <p class="description">
+            I've updated my portfolio!
+            You're being redirected to my new portfolio.
+            Thanks for visiting!
+        </p>
+
+        <div class="countdown" id="countdown">5</div>
+
+        <p class="redirect-text">
+            Redirecting automatically in <span id="seconds">5</span> seconds...
+        </p>
+
+        <div class="footer">
+            © 2026 — Thanks for stopping by.
+        </div>
+
+    </main>
+
+    <script>
+        let timeLeft = 5;
+
+        const countdown = document.getElementById("countdown");
+        const seconds = document.getElementById("seconds");
+
+        const timer = setInterval(() => {
+            timeLeft--;
+
+            countdown.textContent = timeLeft;
+            seconds.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.replace(
+                    "https://github.com/devarafa/Portfolio"
+                );
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
